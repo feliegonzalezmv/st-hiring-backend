@@ -1,9 +1,7 @@
 {
-  "include": ["src/**/*"],
-  "exclude": ["dist/**/*"],
-
   "compilerOptions": {
-    "composite": true,
+    "target": "ES2020",
+    "module": "CommonJS",
     "rootDir": "src",
     "outDir": "dist",
     "types": ["jest", "node"],
@@ -14,10 +12,10 @@
     "sourceMap": true,
     "preserveConstEnums": true,
     "esModuleInterop": true,
+    "moduleResolution": "node",
 
     // Type Checking Options
     "noUnusedLocals": true,
-    //"noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
 
@@ -32,5 +30,7 @@
     "skipDefaultLibCheck": true,
 
     "plugins": [{ "transform": "ts-auto-mock/transformer", "cacheBetweenTests": false }]
-  }
+  },
+  "include": ["src/**/*", "test/**/*"],
+  "exclude": ["dist/**/*"]
 }
