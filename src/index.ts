@@ -6,6 +6,7 @@ import { createTicketDAL } from './dal/tickets.dal';
 import { createGetEventsController } from './controllers/get-events';
 import settingsRoutes from './routes/settingsRoutes';
 import connectDB from './config/mongoose';
+import cors from 'cors';
 
 connectDB();
 
@@ -17,7 +18,7 @@ const eventDAL = createEventDAL(Knex);
 const TicketDAL = createTicketDAL(Knex);
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 
 app.use('/health', (req, res) => {
