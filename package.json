@@ -20,6 +20,7 @@
     "dependencies": {
         "@types/mongoose": "^5.11.97",
         "express": "4.19.2",
+        "joi": "^17.13.3",
         "knex": "^3.1.0",
         "mongodb": "^6.8.0",
         "mongoose": "^8.6.0",

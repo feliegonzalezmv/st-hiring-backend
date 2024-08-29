@@ -37,7 +37,9 @@ export const updateSettings = async (req: Request, res: Response) => {
   const updateData = req.body;
 
   try {
-    const settings = await Settings.findOneAndUpdate({ clientId: Number(clientId) }, updateData, {
+    const updatedSettings = { ...updateData, clientId: Number(clientId) };
+
+    const settings = await Settings.findOneAndUpdate({ clientId: Number(clientId) }, updatedSettings, {
       new: true,
       runValidators: true,
     });
